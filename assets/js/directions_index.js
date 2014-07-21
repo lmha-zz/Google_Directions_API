@@ -12,6 +12,7 @@ $(document).ready(function(){
 						"</div>"
 						);
 				} else {
+					console.log(data['routes'][0]['legs'][0]['distance']['text']);
 					var steps = '';
 					for (var x = 0; x < (data['routes'][0]['legs'][0]['steps']).length; x++) {
 						steps+= "<div class='row'>"+
@@ -24,6 +25,16 @@ $(document).ready(function(){
 						"<div class='row'>"+
 							"<div class='col-sm-12'>"+
 								"<h1>Directions from "+data['routes'][0]['legs'][0]['start_address']+" to "+ data['routes'][0]['legs'][0]['end_address']+"</h1>"+
+							"</div>"+
+						"</div>"+
+						"<div class='row'>"+
+							"<div class='col-sm-12'>"+
+								"<h4>Total distance is: "+data['routes'][0]['legs'][0]['distance']['text']+"</h4>"+
+							"</div>"+
+						"</div>"+
+						"<div class='row'>"+
+							"<div class='col-sm-12'>"+
+								"<h4>This trip will take: "+data['routes'][0]['legs'][0]['duration']['text']+"</h4>"+
 							"</div>"+
 						"</div>"+
 						steps
